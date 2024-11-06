@@ -56,7 +56,7 @@ import Menu from "../assets/menu.svg";
 import { onMounted, onUnmounted, ref, watchEffect } from "vue";
 
 const showNav = ref(false);
-const width = ref(2000);
+const width = ref(window.screen.width);
 
 onMounted(() => {
   const event = () => {
