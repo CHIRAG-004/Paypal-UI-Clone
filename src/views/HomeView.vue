@@ -44,9 +44,9 @@ onBeforeUnmount(() => {
 
 <template>
   <main>
-    <div class="mt-5">
+    <div class="mt-2">
       <div
-        class="relative overflow-hidden h-[650px] sm:h-[480px] bg-blue-300 w-full"
+        class="relative overflow-hidden h-[600px] sm:h-[480px] bg-blue-300 w-full"
       >
         <CarouselItem
           v-for="(image, index) in images"
@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
           :btns="image.btns"
         />
         <div
-          class="absolute mt-[200px] flex w-full pt-[390px] sm:pt-[200px] xl:pt-0"
+          class="absolute mt-[200px] flex w-full pt-[340px] sm:pt-[200px] xl:pt-0"
         >
           <img
             :src="Arrow"

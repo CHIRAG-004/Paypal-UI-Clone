@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <div v-if="showNav" class="flex mx-11 mt-3 justify-between text-[12px]">
+    <div v-if="showNav" class="flex mx-2 mt-3 justify-between text-[12px]">
       <div class="">
         <Button :text="'Menu'" :brCr="'border-[#0070ba]'" :txCr="'text-[#0070ba]'">
           <img :src="Menu" alt="menu" class="color-[#0070ba] w-5" />
