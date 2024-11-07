@@ -7,6 +7,8 @@ import ButtonComp from "@/components/ButtonComp.vue";
 import Arrow from "../assets/arrow.svg";
 // import ButtonComp from "@/components/ButtonComp.vue";
 
+const props = defineProps(["showMenu"]);
+
 const images = reactive([
   {
     img: Image1,
@@ -30,6 +32,7 @@ const SlideInterval = ref<number | undefined | ReturnType<typeof setInterval>>(
 const currentSlide = ref(1);
 
 onMounted(() => {
+  console.log(props.showMenu);
   SlideInterval.value = setInterval(() => {
     currentSlide.value = (currentSlide.value + 1) % 2;
   }, 5000);
@@ -43,8 +46,8 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <main>
-    <div class="mt-2">
+  <main class="relative">
+    <div class="mt-14">
       <div
         class="relative overflow-hidden h-[600px] sm:h-[480px] bg-blue-300 w-full"
       >
@@ -82,12 +85,16 @@ onBeforeUnmount(() => {
           <span
             class="bg-white w-4 rounded-full h-4 hover:bg-blue-500 cursor-pointer"
             @click="currentSlide = 0"
-            :class="{ 'opacity-50 hover:bg-white/100 cursor-auto': currentSlide == 0 }"
+            :class="{
+              'opacity-50 hover:bg-white/100 cursor-auto': currentSlide == 0,
+            }"
           ></span>
           <span
             class="bg-white w-4 rounded-full h-4 hover:bg-blue-500 cursor-pointer"
             @click="currentSlide = 1"
-            :class="{ 'opacity-50 hover:bg-white/100 cursor-auto': currentSlide == 1 }"
+            :class="{
+              'opacity-50 hover:bg-white/100 cursor-auto': currentSlide == 1,
+            }"
           ></span>
         </div>
       </div>
