@@ -12,7 +12,9 @@
         </Button>
       </div>
       <div>
-        <img :src="Plogo" alt="PLogo" class="w-[25px] mt-1" />
+        <router-link to="/"
+          ><img :src="Plogo" alt="PLogo" class="w-[25px] mt-1"
+        /></router-link>
       </div>
       <div>
         <Button
@@ -33,7 +35,7 @@
         <div
           v-for="(item, index) in navItems"
           :key="index"
-          class="flex items-center gap-1"
+          class="flex items-center gap-1 cursor-pointer"
         >
           <div>{{ item }}</div>
           <img :src="Down" alt="Dropdown Icon" class="w-4 h-4" />
@@ -50,33 +52,33 @@
     </div>
   </div>
 
-  <div>
-    <div class="h-screen w-[65%] bg-[#0a2962] absolute z-10" v-if="showMenu && showNav">
-      <div class="mt-6 mx-4">
-        <div
-          v-for="(item, index) in navItems"
-          :key="index"
-          class="flex text-white text-[15px] items-center gap-2 mt-4 cursor-pointer"
-          @click="manageMenuItems(index)"
-        >
-          <h1 class="font-medium">{{ item }}</h1>
-          <img :src="Arrow" alt="" class="h-[15px] opacity-80" />
-        </div>
-        <hr class="bg-white mt-4 opacity-65" />
-
-        <div>
-          <Button
-            :text="'Sign Up'"
-            :tx-cr="'text-white'"
-            class="mt-[550px] mx-auto flex justify-center w-[70%] font-normal"
-          />
-        </div>
+  <div
+    class="min-h-full w-[65%] bg-[#0a2962] absolute z-10"
+    v-if="showMenu && showNav"
+  >
+    <div class="my-6 mx-4">
+      <div
+        v-for="(item, index) in navItems"
+        :key="index"
+        class="flex text-white text-[15px] items-center gap-2 mt-4 cursor-pointer"
+        @click="manageMenuItems(index)"
+      >
+        <h1 class="font-medium">{{ item }}</h1>
+        <img :src="Arrow" alt="" class="h-[15px] opacity-80" />
       </div>
+      <hr class="bg-white mt-4 opacity-65" />
     </div>
+    <div class="mt-[500px]">
+      <Button
+        :text="'Sign Up'"
+        :tx-cr="'text-white'"
+        class="mx-auto flex w-[70%] justify-center font-normal"
+      />
+    </div>
+  </div>
 
-    <div v-if="showMenuItems">
-      <MenuItems :data="menuData[index]" @updateMenu="showMenuItems = $event" />
-    </div>
+  <div v-if="showMenuItems">
+    <MenuItems :data="menuData[index]" @updateMenu="showMenuItems = $event" />
   </div>
 </template>
 

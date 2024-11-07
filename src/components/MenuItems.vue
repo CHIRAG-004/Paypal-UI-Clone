@@ -10,7 +10,7 @@
           <div v-for="(item, index) in props.data.content" :key="index" class="mt-3">
             <div class="font-thin text-[15px]">{{ item.title }}</div>
             <hr v-if="item.title" class="opacity-60 mt-2">
-            <div v-for="(items, ind) in item.subtitle" :key="ind" class="mt-3 ml-3 text-[15px]">{{ items }}</div>
+            <div v-for="(items, ind) in item.subtitle" :key="ind" class="mt-3 ml-3 text-[15px]" :class="{'mt-6': !item.title}">{{ items }}</div>
           </div>
         </div>
       </div>

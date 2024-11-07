@@ -49,7 +49,7 @@ onBeforeUnmount(() => {
   <main class="relative">
     <div class="mt-14">
       <div
-        class="relative overflow-hidden h-[600px] sm:h-[480px] bg-blue-300 w-full"
+        class="relative overflow-hidden h-[600px] sm:h-[480px] w-full"
       >
         <CarouselItem
           v-for="(image, index) in images"
